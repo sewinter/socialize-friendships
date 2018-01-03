@@ -67,9 +67,9 @@ User.methods({
      * Send a freindship request to a user
      * @method requestFriendship
      */
-    requestFriendship: function () {
+    requestFriendship: function (userId) {
         //insert the request, simple-schema takes care of default fields and values and allow takes care of permissions
-        new Request({userId:this._id}).save();
+        new Request({requesterId:this._id, userId}).save();
     },
 
     /**
